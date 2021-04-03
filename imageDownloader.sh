@@ -1,5 +1,5 @@
 #!/bin/bash
-function download() {
+function downloadImages() {
     if [ $# -eq 2 ]
     then
         echo "in myp"
