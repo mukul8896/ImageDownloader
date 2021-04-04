@@ -1,12 +1,12 @@
 #!/bin/bash
 function downloadImages() {
+    link = 
     if [ $# -eq 1 ]
     then
-        echo "in myp"
-        python3 DownloadGallary.py --link termux-clipboard-get --site $1
+        python3 DownloadGallary.py --link $(termux-clipboard-get) --site $1
     elif [ $# -eq 2 ]
     then
-        python3 DownloadGallary.py --link termux-clipboard-get --pages $1 --site $2
+        python3 DownloadGallary.py --link $(termux-clipboard-get) --pages $1 --site $2
     else
         echo "Wrong Inputs"
     fi
