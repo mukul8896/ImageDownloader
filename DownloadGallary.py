@@ -60,6 +60,24 @@ def myp(link):
             f.write(im.content)
             print("Downloaded: "+ name+"\n")
 
+def prp(link):
+    r=requests.get(link)
+    page_view=r.content
+    soup = BeautifulSoup(page_view,"html.parser")
+    div_main=soup.find_all("div",attrs={"id":"main"})[0]
+    a_tags=div_main.find_all("a")
+
+    for image_tag in a_tags:
+        image_link=image_tag['href']
+        print("Image link: "+image_link)
+        name=image_link.split('/')[7]
+        with open(name, 'wb') as f:
+            im = requests.get(image_link)
+            f.write(im.content)
+            print("Downloaded: "+ name+"\n")    
+
+
+
 if __name__ == '__main__':
     parser=argparse.ArgumentParser()
     parser.add_argument('--link',type=str)
@@ -73,3 +91,5 @@ if __name__ == '__main__':
             ima(args.link,page)
     elif(args.site=="myp"):
         myp(args.link)
+    elif(args.site=="prp"):
+        prp(args.link)

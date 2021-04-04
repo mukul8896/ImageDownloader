@@ -1,12 +1,12 @@
 #!/bin/bash
 function downloadImages() {
-    if [ $# -eq 2 ]
+    if [ $# -eq 1 ]
     then
         echo "in myp"
-        python3 DownloadGallary.py --link $1 --site $2
-    elif [ $# -eq 3 ]
+        python3 DownloadGallary.py --link termux-clipboard-get --site $1
+    elif [ $# -eq 2 ]
     then
-        python3 DownloadGallary.py --link $1 --pages $2 --site $3
+        python3 DownloadGallary.py --link termux-clipboard-get --pages $1 --site $2
     else
         echo "Wrong Inputs"
     fi
