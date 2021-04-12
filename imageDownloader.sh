@@ -1,6 +1,5 @@
 #!/bin/bash
 function downloadImages() {
-    link = 
     if [ $# -eq 1 ]
     then
         python3 DownloadGallary.py --link $(termux-clipboard-get) --site $1
