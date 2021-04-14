@@ -1,4 +1,4 @@
-import argparse
+iimport argparse
 import sys
 import requests
 from bs4 import BeautifulSoup
@@ -85,11 +85,11 @@ if __name__ == '__main__':
     parser.add_argument('--site',type=str)
     args = parser.parse_args()
     
-    if(args.site=="ima"):
+    if(args.site=="i"):
         pages=args.pages.split(",")
         for page in pages:
             ima(args.link,page)
-    elif(args.site=="myp"):
+    elif(args.site=="m"):
         myp(args.link)
-    elif(args.site=="prp"):
+    elif(args.site=="p"):
         prp(args.link)
