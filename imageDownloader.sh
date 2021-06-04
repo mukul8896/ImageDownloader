@@ -7,6 +7,6 @@ function downloadImages() {
     then
         python3 ~/ImageDownloader/DownloadGallary.py --link $(termux-clipboard-get) --pages $1 --site $2
     else
-        echo "Wrong Inputs"
+        echo "Wrong Inputs parameters"
     fi
 }
